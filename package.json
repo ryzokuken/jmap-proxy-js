@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/ryzokuken/jmap-proxy-js/issues"
   },
-  "homepage": "https://github.com/ryzokuken/jmap-proxy-js#readme"
+  "homepage": "https://github.com/ryzokuken/jmap-proxy-js#readme",
+  "dependencies": {
+    "imap": "^0.8.19"
+  }
 }
