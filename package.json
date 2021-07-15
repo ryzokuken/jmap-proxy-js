@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/ryzokuken/jmap-proxy-js#readme",
   "dependencies": {
+    "env-paths": "^2.2.1",
     "imap": "^0.8.19"
   }
 }
