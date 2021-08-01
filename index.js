@@ -2,12 +2,12 @@ const path = require('path');
 const fs = require('fs');
 
 const envPaths = require('env-paths');
-const Imap = require('imap');
+// const IMAP = require('imap');
 
 const configPath = path.join(envPaths('jmap-proxy', {suffix: ''}).config, 'config.json');
 const config = JSON.parse(fs.readFileSync(configPath).toString());
 
-const imap = new Imap(config.imap);
+const imap = new IMAP(config.imap);
 
 imap.once('ready', () => {
   imap.getBoxes((err, boxes) => {
