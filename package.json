@@ -19,6 +19,7 @@
   "dependencies": {
     "env-paths": "^2.2.1",
     "fastify": "^3.19.2",
+    "fastify-basic-auth": "^2.1.0",
     "imap": "^0.8.19"
   }
 }
