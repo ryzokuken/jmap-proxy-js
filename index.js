@@ -27,9 +27,19 @@ const config = JSON.parse(fs.readFileSync(configPath).toString());
 
 // imap.connect();
 
-fastify.get('/', async (request, reply) => {
-  reply.type('application/json').code(200);
-  return { hello: 'world' };
+async function validate(username, password) {
+  if (username !== config.jmap.user || password !== config.jmap.password) throw new Error();
+}
+
+fastify.register(require('fastify-basic-auth'), { validate });
+
+fastify.after(() => {
+  fastify.addHook('onRequest', fastify.basicAuth);
+
+  fastify.get('/', async (_, reply) => {
+    reply.type('application/json').code(200);
+    return { hello: 'world' };
+  });
 });
 
 fastify.listen(3000, (err, address) => {
